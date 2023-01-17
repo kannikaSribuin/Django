@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <div class="rounded m-3 fs-6" style="background-color: white; height: 100%; font-family: 'Prompt', sans-serif;">
+        <div class="d-flex pt-3 bd-highlight">
+            <div class="p-2 bg-dark flex-fill text-white" style="font-family: 'Mochiy Pop P One', sans-serif;">
+             <h3><img src="{% static 'images/Profile1.png' %}" alt="com" width="60px">ประวัติส่วนตัว</h3>
+            </div>
+        </div>
+        <div class="m-2 pt-2">
+            <img src="{% static 'images/waew.jpg' %}" class="rounded float-end img-thumbnail border border-info" alt="mypic" width="300">
+         <div class="row pt-3">
+          <div class="col-lg-5">
+              
+            <b>
+                <p>นางสาวกรรณิกา ศรีบุรินทร์</p>
+              <p>ชื่อเล่น แหว๋ว</p>
+              <p>เกิดวันที่ 07 มิ.ย. 2541</p>
+              <p>อายุ 24 ปี</p>
+              <p>ที่อยู่ 74 หมู่ 3 บ้านน้ำสวยภักดี ต.ท่าสะอาด</p>
+              <p>อ.นาด้วง จ.เลย 42210</p>
+              <br>
+              <p>บิดา: นายเฮือง ศรีบุรินทร์</p>
+              <p>มารดา: นางกาญจนา ศรีบุรินทร์</p>
+            </b>
+          </div>
+             <div class="col-lg-5">
+                 <b>
+                 <p>Mr. Kannika Sriburin</p>
+                 <p>NickName WAEW</p>
+                 <p>Date of Birth 07 June. 1998</p>
+                 <p>Age 24 Years old</p>
+                 <p>74 Moo 3, Ban NamSuaiPhakdi, Tasaat</p>
+                 <p>Nadung , Loei 42210</p>
+                 </b>
+             </div>
+         </div>
+<div>
+
+        <div class="row pt-5 text-center">
+            <div class="col-lg-1">
+                <a href="https://www.facebook.com/profile.php?id=100087676311281" >
+                    <img src="{% static 'images/fb1.png'%}" width="100px" alt="fb">
+                    <h5>Facebook</h5>
+                </a>
+            </div>
+           <div class="col-lg-4">
+                 <a href="https://www.instagram.com/xxwaewxx/">
+                    <img src="{% static 'images/ig.png'%}" width="100px" alt="fb">
+                    <h5>Instagram</h5>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+    <head>
+    <style>
+        img {
+    max-width: 100%;
+    height: auto;
+    }
+    </style>
+     </head>
+    {% load static %}
+    <div class="rounded m-3" style="background-color: white; height: 100%; font-family: 'Prompt', sans-serif;">
+    <div class="row mx-3 pt-3">
+        <div class="col-lg-12">
+            <div class="card" style="width:90%">
+                <div class="card-header bg-dark text-white">
+                    <h4>การศึกษาในปัจจุบัน</h4>
+                </div>
+            <img class="card-img-top" src="{% static 'images/logo-kkc.png' %}" alt="Card image">
+            <div class="card-body">
+                <h5 class="card-title"><b>คณะบริหารธุรกิจและเทคโนโลยีสารสนเทศ</b></h5>
+                <p class="card-text"><b>ปริญญาตรี</b></p>
+            </div>
+            </div>
+        </div>
+    </div>
+        <div class="d-flex pt-3 bd-highlight">
+            <div class="p-2 bg-dark flex-fill text-white"><h4>ประวัติการศึกษา</h4></div>
+        </div>
+    <div class="row mx-3 pt-3 text-center">
+        <div class="col-lg-4">
+            <div class="card" style="width:200px">
+            <img class="card-img-top" src="{% static 'images/a5.jpg' %}" alt="Card image">
+            <div class="card-body">
+                <p class="card-text"><b>&emsp;ปวช. </b></p>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card" style="width:190px">
+            <img class="card-img-top" src="{% static 'images/a6.jpg' %}" alt="Card image2">
+            <div class="card-body">
+                <p class="card-text"><b>ปวส.</b></p>
+            </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+{% endblock %}

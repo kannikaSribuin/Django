@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <div class="rounded m-3 bg-light" style=" height: 100%;">
+
+        <div class="d-flex pt-3 bd-highlight">
+            <div class="p-2 bg-dark flex-fill text-white" style="font-family: 'Prompt', sans-serif;">
+             <h3><img src="{% static 'images/User.png' %}" alt="com" width="60px"> บุคคลต้นแบบ</h3>
+            </div>
+        </div>
+        <div >
+            <img src="{% static 'images/s6.png' %}" class="rounded mx-auto pt-3 d-block" alt="pg" width="400px">
+        </div>
+        <div class="m-3 pt-3 fs-5" style="font-family: 'Prompt', sans-serif;">
+            <p class="text-center"><b>พ่อ&แม่&พี่สาว</b></p>
+
+        </div>
+
+
+    </div>
+{% endblock %}

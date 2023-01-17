@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Business Technology Program</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap5.2/css/bootstrap.css' %}">
+    <script src="{% static 'bootstrap5.2/js/bootstrap.js' %}"></script>
+    <script src="{% static 'bootstrap5.2/css/bootstrap.min.css' %}"></script>
+    <style>
+    a { text-decoration: none; }
+    body { background-color: #fbfbff}
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+{% block sidebar %}
+    <nav class="navbar navbar-expand-sm fixed-top bg-info navbar-dark" >
+        <div class="col-lg-2">
+                <a href="{% url 'home' %}" class="navbar-brand " style="padding-left: 120px">
+                    <img src="{% static 'images/s7.png' %}" alt="logo" style="width: 100px; height: 100px">
+                </a>
+        </div>
+        <div class="col-lg-10 align-self-lg-right">
+            <p style="font-family: 'Mochiy Pop P One', sans-serif; color: black; font-size: 32px">Digital Business Technology Program</p>
+
+        </div>
+    </nav>
+{% endblock %}
+    <div class="row">
+        <div class="col-lg-2">
+        {% include 'menu.html' %}
+        </div>
+        <div class="col-lg-8">
+            <br><br><br><br><br>
+            {% block content %}
+            {#content Page#}
+            {% endblock %}
+        </div>
+    </div>
+    </div>
+<div class="p-3 bg-dark text-white text-center fixed-bottom" style="max-height: 50px">
+  <p>DBT &copy;2023</p>
+</div>
+</body>
+</html>v

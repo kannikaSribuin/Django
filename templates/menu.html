@@ -1,0 +1,38 @@
+<br><br><br><br><br>
+{% load static %}
+<ul class="list-group" style="font-family: Dongle, serif;">
+    <li class="list-group-item list-group-item-dark" style="font-size: 29px;">
+        <i class="fa fa-list"></i> Menu:
+    </li>
+    <li class="list-group-item">
+        <a href="{% url 'home' %}" style="font-size: 28px; color:black">
+            <img src="{% static 'images/home.png' %}" alt="home"> Home
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a href="{% url 'myinfo' %}" style="font-size: 28px; color:black">
+            <img src="{% static 'images/info.png' %}" alt="info"> MyInfo
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a href="{% url 'education' %}" style="font-size: 28px; color:black">
+            <img src="{% static 'images/edu.png' %}" alt="info"> Educational
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a href="{% url 'interest' %}" style="font-size: 28px; color:black">
+            <img src="{% static 'images/home.png' %}" style="width: 35px;" alt="Interest"> Interest
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a href="{% url 'career' %}" style="font-size: 28px; color:black">
+             <img src="{% static 'images/search.png' %}" alt="Career" > Career
+        </a>
+    </li>
+     <li class="list-group-item">
+        <a href="{% url 'idol' %}" style="font-size: 28px; color:black">
+             <img src="{% static 'images/role.png' %}" alt="Rolemodel" style="width: 35px;"> Role Model
+        </a>
+    </li>
+</ul>
+<br><br><br><br>
