@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
     {% load static %}
+    <style>
+body {
+  background-image: url("{% static 'images/t2.jpg'%}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
     <div class="rounded m-3 bg-light" style=" height: 100%;">
 
         <div class="d-flex pt-3 bd-highlight">

@@ -1,11 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
     {% load static %}
-    <div class="rounded m-2" style="background-image: url({% static 'images/s2.jpg' %});background-position:center top; height: 95%;">
-        <div class="d-flex pt-3 bd-highlight">
-            <div class="p-2 bg-transparent flex-fill text-white" style="font-family: 'Prompt', sans-serif;">
-                <h1>สิ่งที่สนใจ</h1>
+    <style>
+body {
+  background-image: url("{% static 'images/t2.jpg'%}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+
+<div class="d-flex pt-3 bd-highlight">
+            <div class="p-2 bg-dark flex-fill text-white" style="font-family: 'Mochiy Pop P One', sans-serif;">
+             <h3><img src="{% static 'images/Profile1.png' %}" alt="com" width="60px">ประวัติส่วนตัว</h3>
             </div>
+        </div>
+        <div class="d-flex pt-3 bd-highlight">
+
         </div>
         <div class="row pt-2">
             <div class="col-lg-4">

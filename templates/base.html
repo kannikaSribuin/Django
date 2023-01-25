@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+<style>
+body {
+  background-image: url("{% static 'images/t2.jpg'%}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Digital Business Technology Program</title>
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
@@ -13,20 +19,20 @@
     <script src="{% static 'bootstrap5.2/css/bootstrap.min.css' %}"></script>
     <style>
     a { text-decoration: none; }
-    body { background-color: #fbfbff}
+    body { background-color:}
     </style>
 </head>
 <body>
     <div class="container-fluid">
 {% block sidebar %}
-    <nav class="navbar navbar-expand-sm fixed-top bg-info navbar-dark" >
-        <div class="col-lg-2">
-                <a href="{% url 'home' %}" class="navbar-brand " style="padding-left: 120px">
+    <nav class="navbar navbar-expand-sm fixed-top bg-dark" >
+        <div class="col-lg-6 ">
+                <a href="{% url 'home' %}" class="navbar-brand " style="padding-left: 600px">
                     <img src="{% static 'images/s7.png' %}" alt="logo" style="width: 100px; height: 100px">
                 </a>
         </div>
         <div class="col-lg-10 align-self-lg-right">
-            <p style="font-family: 'Mochiy Pop P One', sans-serif; color: black; font-size: 32px">Digital Business Technology Program</p>
+            <p style="font-family: 'Mochiy Pop P One', sans-serif; color: white; font-size: 30px">Digital Business Technology Program</p>
 
         </div>
     </nav>
@@ -43,8 +49,7 @@
         </div>
     </div>
     </div>
-<div class="p-3 bg-dark text-white text-center fixed-bottom" style="max-height: 50px">
-  <p>DBT &copy;2023</p>
+
 </div>
 </body>
 </html>v

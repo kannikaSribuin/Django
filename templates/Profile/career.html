@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
     {% load static %}
-    <div class="rounded m-3" style="background-color: lightgray; height: 100%;">
+    <style>
+body {
+  background-image: url("{% static 'images/t2.jpg'%}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+    <div class="rounded m-3 fs-6" style="background-color: white; height: 100%; font-family: 'Prompt', sans-serif;">
+
 
         <div class="d-flex pt-3 bd-highlight">
             <div class="p-2 bg-dark flex-fill text-white" style="font-family: 'Prompt', sans-serif;">
@@ -9,7 +18,7 @@
             </div>
         </div>
         <div >
-            <img src="{% static 'images/s3.jpeg' %}" class="rounded mx-auto pt-3 d-block" alt="pg" style="max-width:80%; height:auto;">
+            <img src="{% static 'images/s3.jpg' %}" class="rounded mx-auto pt-3 d-block" alt="pg" style="max-width:80%; height:auto;">
         </div>
         <div class="m-3 pt-3 fs-5" style="font-family: 'Prompt', sans-serif;">
             <p><b>&emsp; นักเขียนโปรแกรม หรือ โปรแกรมเมอร์ (programmer)</b></p>

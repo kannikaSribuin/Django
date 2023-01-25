@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
     {% load static %}
-
-<div class="rounded m-3 bg-dark text-white" style="height: 100%;">
+<style>
+body {
+  background-image: url("{% static 'images/t2.jpg'%}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+<div class="rounded m-3 fs-6" style="background-color: white; height: 100%; font-family: 'Prompt', sans-serif;">
 <div id="Interval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
     <button type="button" data-bs-target="#Interval" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -29,7 +36,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<div class="jumbotron text-center" style="font-family: Mochiy Pop P One;">
+<div class="jumbotron text-center" style="color: black">
     <br>
 <h1>ยินดีต้อนรับสู่เทคโนโลยีธุรกิจดิจิทัล</h1>
 </div>
@@ -37,14 +44,6 @@
    &nbsp; อย่างน้อยนั่นคือพื้นฐานของแพลตฟอร์มเทคโนโลยีธุรกิจดิจิทัล นี่คือแนวคิด: ในบางแง่มุม ทุกบริษัทคือบริษัทซอฟต์แวร
     เนื่องจากบริษัทในปัจจุบันต้องทำงานในแบบที่บริษัทซอฟต์แวร์หรือเทคโนโลยีหลายแห่งทำ โดยวิธีการที่เราสามารถช่วยคุณ
     ในการเปลี่ยนแปลงสู่ธุรกิจดิจิทัล
-</p>
-<p class="p-3" style="font-size: 20px"><b> ความสำคัญของธุรกิจ </b>
-        <p class="p-3" style="font-size: 18px"> 1. การดำเนินงานของธุรกิจก่อให้เกิดการนำทรัพยากรของประเทศมาใช้ให้เกิดประโยชน์สูงสุด</p>
-        <p class="p-3" style="font-size: 18px"> 2. ช่วยให้ผู้บริโภคหรือประชาชนได้ใช้สินค้าหรือบริการ เพื่อพัฒนาความเป็นอยู่ของตนเองให้ดีขึ้น</p>
-        <p class="p-3" style="font-size: 18px"> 3. ธุรกิจต่างๆ ช่วยขจัดปัญหาการว่างงาน และช่วยกระจายรายได้ไปสู่ประชาชน</p>
-        <p class="p-3" style="font-size: 18px"> 4. ช่วยเพิ่มพูนรายได้ให้กับประเทศในรูปแบบของภาษีอากร</p>
-        <p class="p-3" style="font-size: 18px"> 5. ประชาชนหรือผู้บริโภคมีโอกาสได้เลือกสินค้าหรือบริการที่สนองความพึงพอใจสูงสุดได้ง่าย เพราะธุรกิจต่างๆ มีการแข่งขันกัน เพื่อพัฒนาสินค้าหรือบริการ</p>
-        <p class="p-3" style="font-size: 18px"> 6. ประเทศสามารถนำภาษีอากรที่จัดเก็บไปพัฒนาประเทศได้</p>
 </p>
 </div>
 {% endblock %}

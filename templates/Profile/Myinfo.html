@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% load static %}
+{% load static %}
+<style>
+body {
+  background-image: url("{% static 'images/t2.jpg'%}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
     <div class="rounded m-3 fs-6" style="background-color: white; height: 100%; font-family: 'Prompt', sans-serif;">
         <div class="d-flex pt-3 bd-highlight">
             <div class="p-2 bg-dark flex-fill text-white" style="font-family: 'Mochiy Pop P One', sans-serif;">
@@ -22,6 +30,7 @@
               <br>
               <p>บิดา: นายเฮือง ศรีบุรินทร์</p>
               <p>มารดา: นางกาญจนา ศรีบุรินทร์</p>
+                <p>พี่สาว: นางสาวธนาภรณ์ ศรีบุรินทร์</p>
             </b>
           </div>
              <div class="col-lg-5">
@@ -51,9 +60,24 @@
                 </a>
             </div>
         </div>
+        <div class="row">
 
+        <div class="polaroid">
+  <img src="{% static 'images/a6.jpg' %}" alt="5 Terre" style="width:30%">
+  <div class="container">
+  <p>Cinque Terre</p>
+  </div>
+        </div>
+
+        <div class="polaroid">
+  <img src="{% static 'images/d2.png' %}" alt="Norther Lights" style="width:30%">
+  <div class="container">
+  <p>Northern Lights</p>
+  </div>
+        </div>
 
     </div>
         </div>
     </div>
+
 {% endblock %}
