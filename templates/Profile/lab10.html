@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+    <head>
+        <style>
+            #pic { width: 150px;}
+            td {text-align: left;
+             vertical-align: middle;
+                font-size: 18px;}
+            p{font-size: 20px}
+        </style>
+    </head>
+    {% load static %}
+    <div class="rounded m-3 bg-white" style="height: 100%; font-family: 'Prompt', sans-serif;">
+    <div class="d-flex pt-3 bd-highlight">
+            <div class="p-2 bg-dark flex-fill text-white" style="font-family:'Yellowtail', cursive;">
+             <h3><img src="{% static 'images/py.png' %}" alt="com" width="50px"> Practice 10</h3>
+            </div>
+        </div>
+        <br>
+    <div class="row">
+        <div class="col-6">
+          <b><p>รหัสประจำตัว: {{ stdid }}</p>
+            <p>ที่อยู่: {{ address }}</p>
+            <p>น้ำหนัก: {{ weight }}</p>
+            <p>สี: {{ color }}</p>
+            <p>อาชีพ: {{ job }}</p></b>
+        </div>
+        <div class="col-6">
+           <b><p>ชื่อ: {{ name }}</p>
+            <p>เพศ: {{ gen }}</p>
+            <p>ส่วนสูง: {{ height }}</p>
+               <p>อาหารที่ชอบ: {{ food }}</p></b>
+        </div>
+    </div>
+        <div>
+           <table class="table table-dark table-hover table-striped">
+        <tr>
+            <th><h4>Product</h4></th>
+             <th><h4>Price</h4></th>
+             <th><h4>IMAGES</h4></th>
+        </tr>
+        {% for listproduct in productlist %}
+        <tr>
+            <td>{{ listproduct.0 }}</td>
+            <td>{{ listproduct.1 }}</td>
+            <td><img src="{% static listproduct.2 %}" alt="pic" id="pic"></td>
+        </tr>
+        {% endfor %}
+           </table>
+        </div>
+    </div>
+{% endblock %}

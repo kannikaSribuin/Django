@@ -1,0 +1,51 @@
+<title>showMyData</title>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <br>
+    <div class="text-center">
+    <h2 class="text-center">Show Data</h2>
+    <br>
+        <div class="row">
+        <div class="col-6">
+    <p><strong>ID: </strong> 65342310202-1</p>
+    <p><strong>Name: </strong> kannika </p>
+    <p><strong>gender: </strong>woman</p>
+    <p><strong>Height: </strong>165</p>
+    <p><strong>weight: </strong>50</p>
+        </div>
+            <div class="col-6">
+    <p><strong>Food: </strong>ก๋วยเตี๋ยว}</p>
+    <p><strong>Color: </strong>black</p>
+    <p><strong>domicile: </strong>เลย</p>
+    <p><strong>car: </strong>BMW</p>
+    <p><strong>Pet: </strong>แมว</p>
+            </div>
+        </div>
+    </div>
+    <head>
+    <br>
+        <h2 class="text-center">หมวกแฟชั่น</h2>
+    </head>
+
+    <div class="container mt-3 text-center">
+
+        <table class="table table-bordered">
+            <tr>
+
+                <th>Name</th>
+                <th>Price</th>
+                <th>Images</th>
+            </tr>
+            {% for products in product %}
+                <tr>
+                    <td> {{ products.0 }} </td>
+                    <td> {{ products.1 }} </td>
+                 <td>
+                        <img src="{{ products.2 }}"style="width: 200px;height: 200px">
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
