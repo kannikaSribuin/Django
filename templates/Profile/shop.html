@@ -1,4 +1,3 @@
-<title>showMyData</title>
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
@@ -15,7 +14,7 @@
     <p><strong>weight: </strong>50</p>
         </div>
             <div class="col-6">
-    <p><strong>Food: </strong>ก๋วยเตี๋ยว}</p>
+    <p><strong>Food: </strong>ก๋วยเตี๋ยว</p>
     <p><strong>Color: </strong>black</p>
     <p><strong>domicile: </strong>เลย</p>
     <p><strong>car: </strong>BMW</p>
@@ -23,13 +22,11 @@
             </div>
         </div>
     </div>
-    <head>
+
     <br>
         <h2 class="text-center">หมวกแฟชั่น</h2>
-    </head>
 
     <div class="container mt-3 text-center">
-
         <table class="table table-bordered">
             <tr>
 
@@ -37,12 +34,12 @@
                 <th>Price</th>
                 <th>Images</th>
             </tr>
-            {% for products in product %}
+            {% for products in myproduct %}
                 <tr>
                     <td> {{ products.0 }} </td>
                     <td> {{ products.1 }} </td>
                  <td>
-                        <img src="{{ products.2 }}"style="width: 200px;height: 200px">
+                       <img src="{% static products.2 %}" alt="pic" id="pic" style="width: 200px; height: 200px;">
                     </td>
                 </tr>
             {% endfor %}

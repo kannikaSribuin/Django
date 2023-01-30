@@ -12,7 +12,7 @@ def interest(request):
 def career(request):
     return render(request, 'profile/career.html')
 def shop(request):
-    productlist = [["หมวกแฟชั่น", 150, "images/pd1.jpg"],
+    myproduct = [
                    ["JACQUEMUS Le bob Gadjo", 100, "images/s1.jpg"],
                    ["PRADA Re-Nylon Bucket Hat", 150, "images/s2.jpg"],
                    ["DIOR DIORESORT Small Brim Hat", 89, "images/pd3.jpg"],
@@ -24,7 +24,7 @@ def shop(request):
                    ["LOEWE Bucket Hat in Anagram Jacquard and Calfskin", 69, "images/s9.jpg"],
                    ["CHANEL Cloche Hat", 69, "images/s10.jpg"],
                    ]
-    return render(request, 'profile/shop.html', {'product': productlist})
+    return render(request, 'profile/shop.html', {'myproduct': myproduct})
 def etc(request):
     return render(request, 'profile/etc.html')
 
@@ -38,7 +38,7 @@ def lab10(request):
     color = "สีดำ"
     food = "ชาบู"
     job = "นักศึกษา"
-    productlist = [["หมวกแฟชั่น", 150, "images/pd1.jpg"],
+    productlist = [
                    ["JACQUEMUS Le bob Gadjo", 100, "images/s1.jpg"],
                    ["PRADA Re-Nylon Bucket Hat", 150, "images/s2.jpg"],
                    ["DIOR DIORESORT Small Brim Hat", 89, "images/pd3.jpg"],
