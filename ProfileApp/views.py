@@ -12,8 +12,7 @@ def interest(request):
 def career(request):
     return render(request, 'profile/career.html')
 def shop(request):
-    myproduct = [
-                   ["JACQUEMUS Le bob Gadjo", 100, "images/s1.jpg"],
+    myproduct = [  ["JACQUEMUS Le bob Gadjo", 100, "images/s1.jpg"],
                    ["PRADA Re-Nylon Bucket Hat", 150, "images/s2.jpg"],
                    ["DIOR DIORESORT Small Brim Hat", 89, "images/pd3.jpg"],
                    ["GUCCI GG Canvas Bucket Hat", 30, "images/s4.jpg"],
@@ -25,8 +24,6 @@ def shop(request):
                    ["CHANEL Cloche Hat", 69, "images/s10.jpg"],
                    ]
     return render(request, 'profile/shop.html', {'myproduct': myproduct})
-def etc(request):
-    return render(request, 'profile/etc.html')
 
 def lab10(request):
     name = "กรรณิกา ศรีบุรินทร์์"
