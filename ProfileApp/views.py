@@ -6,13 +6,13 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'home.html')
 def myinfo(request):
-    return render(request, 'profile/Myinfo.html')
+    return render(request, 'Profile/Myinfo.html')
 def education(request):
-    return render(request, 'profile/education.html')
+    return render(request, 'Profile/education.html')
 def interest(request):
-    return render(request, 'profile/interest.html')
+    return render(request, 'Profile/interest.html')
 def career(request):
-    return render(request, 'profile/career.html')
+    return render(request, 'Profile/career.html')
 def shop(request):
     details = "Gundam plastic model (Gunpla)"
     name = "น.ส. กรรณิกา ศรีบุรินทร์"
@@ -39,7 +39,7 @@ def shop(request):
     listProduct.append(pd8)
     listProduct.append(pd9)
     listProduct.append(pd10)
-    return render(request, 'shop.html', {'product': listProduct,
+    return render(request, 'Profile/shop.html', {'product': listProduct,
                                          'details': details, 'name': name,
                                          'date': date.strftime("%A %d-%m-%Y %H : %M")})
 
