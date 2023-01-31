@@ -51,10 +51,10 @@
             <td>{{ listproduct.getScale }}</td>
             <td>{{ listproduct.getTier }}</td>
             <td>{{ listproduct.getHeight }}</td>
-            <td>{{ listproduct.getPrice|intcomma }} บาท</td>
+            <td>{{ listproduct.getPrice|iriencode }} บาท</td>
             <td>{{ listproduct.getDiscount|floatformat  }}</td>
             <td>{{ listproduct.getDelivery }}</td>
-            <td>{{ listproduct.getNet|intcomma }} บาท</td>
+            <td>{{ listproduct.getNet|iriencode }} บาท</td>
             <td><img src="{% static listproduct.getImage %}" alt="pic" id="pic" ></td>
         </tr>
                {% endfor %}
