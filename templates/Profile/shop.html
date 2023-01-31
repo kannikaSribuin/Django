@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+ {% load humanize %}
     <head>
         <style>
             #pic { width: 200px;}
@@ -44,7 +44,7 @@
             <th>Total</th>
              <th>IMAGES</th>
         </tr>
-        {% for listproduct in productlab %}
+        {% for listproduct in product %}
         <tr>
         <td>{{ listproduct.getPid }}</td>
             <td>{{ listproduct.getName }}</td>
