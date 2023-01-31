@@ -16,7 +16,7 @@ def career(request):
 def shop(request):
     details = "Gundam plastic model (Gunpla)"
     name = "น.ส. กรรณิกา ศรีบุรินทร์"
-    date = datetime.datetime.now()
+    date = datetime.date()
 
     product = []
     pd1 = product("001", "RG-Wing Gundam Zero EW", "1/144", "RG", "12-13cm", 915, 'images/.jpg')
@@ -41,9 +41,9 @@ def shop(request):
     product.append(pd10)
     return render(request, 'shop.html', {'product': product,
                                          'details': details, 'name': name,
-                                         'date': date.strftime("%A %d-%m-%Y %H : %M")})
+                                          'date': date.strftime("%A %d-%m-%Y %H : %M")})
 
-  
+
 
 def lab10(request):
     name = "กรรณิกา ศรีบุรินทร์์"
