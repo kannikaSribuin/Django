@@ -14,12 +14,12 @@ def interest(request):
 def career(request):
     return render(request, 'Profile/career.html')
 def shop(request):
-    details = "Gundam plastic model (Gunpla)"
+    details = "fashion hat"
     name = "น.ส. กรรณิกา ศรีบุรินทร์"
     date = datetime.datetime.now()
 
     listProduct = []
-    pd1 = product("001", "RG-Wing Gundam Zero EW", "1/144", "RG", "12-13cm", 915, 'images/wing.jpg')
+    pd1 = product("001", "RG-Wing Gundam Zero EW", "1/144", "RG", "12-13cm", 915, 'images/.jpg')
     pd2 = product("002", "RG-Unicorn Gundam", "1/144", "RG", "12-13cm", 1395, "images/.jpg")
     pd3 = product("003", "RG-OO Qan-T", "1/144", "RG", "12-13cm", 915, "images/OO-q.jpg")
     pd4 = product("004", "RG-Astray Gold FRAME", "1/144", "RG", "12-13cm", 1098, "images/astray.jpg")
