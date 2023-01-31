@@ -1,4 +1,4 @@
-from ProfileApp.models import models
+from ProfileApp.models import *
 import datetime
 from django.shortcuts import render
 
