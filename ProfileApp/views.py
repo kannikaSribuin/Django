@@ -18,8 +18,8 @@ def shop(request):
     name = "น.ส. กรรณิกา ศรีบุรินทร์"
     date = datetime.datetime.now()
 
-    product = []
-    pd1 = product("001", "RG-Wing Gundam Zero EW", "1/144", "RG", "12-13cm", 915, 'images/.jpg')
+    listProduct = []
+    pd1 = product("001", "RG-Wing Gundam Zero EW", "1/144", "RG", "12-13cm", 915, 'images/wing.jpg')
     pd2 = product("002", "RG-Unicorn Gundam", "1/144", "RG", "12-13cm", 1395, "images/.jpg")
     pd3 = product("003", "RG-OO Qan-T", "1/144", "RG", "12-13cm", 915, "images/OO-q.jpg")
     pd4 = product("004", "RG-Astray Gold FRAME", "1/144", "RG", "12-13cm", 1098, "images/astray.jpg")
@@ -29,16 +29,16 @@ def shop(request):
     pd8 = product("008", "MG ZZ Gundam", "1/100", "MG", "17-18cm", 2220, 'images/zz-gundam.jpg')
     pd9 = product("009", "MG Astray Blue Frame D", "1/100", "MG", "17-18cm", 1772, 'images/blueframe.jpg')
     pd10 = product("010", "MG STRIKE FREEDOM", "1/100", "MG", "17-18cm", 2564, 'images/strike.jpg')
-    product.append(pd1)
-    product.append(pd2)
-    product.append(pd3)
-    product.append(pd4)
-    product.append(pd5)
-    product.append(pd6)
-    product.append(pd7)
-    product.append(pd8)
-    product.append(pd9)
-    product.append(pd10)
+    listProduct.append(pd1)
+    listProduct.append(pd2)
+    listProduct.append(pd3)
+    listProduct.append(pd4)
+    listProduct.append(pd5)
+    listProduct.append(pd6)
+    listProduct.append(pd7)
+    listProduct.append(pd8)
+    listProduct.append(pd9)
+    listProduct.append(pd10)
     return render(request, 'shop.html', {'product': product,
                                          'details': details, 'name': name,
                                          'date': date.strftime("%A %d-%m-%Y %H : %M")})
