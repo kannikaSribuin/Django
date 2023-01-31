@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -50,3 +52,34 @@ def lab10(request):
     return render(request, 'Profile/lab10.html',{'name': name, 'stdid': stdid, 'address': address, 'gen': gen,
                                               'weight': weight, 'height': height, 'color': color, 'food': food,
                                               'job': job, 'productlist': productlist})
+
+
+def lab11(request):
+    details = "Gundam plastic model (Gunpla)"
+    name = "น.ส. กรรณิกา ศรีบุรินทร์"
+    date = datetime.datetime.now()
+
+    product = []
+    pd1 = product("001", "RG-Wing Gundam Zero EW", "1/144", "RG", "12-13cm", 915, 'images/.jpg')
+    pd2 = product("002", "RG-Unicorn Gundam", "1/144", "RG", "12-13cm", 1395, "images/.jpg")
+    pd3 = product("003", "RG-OO Qan-T", "1/144", "RG", "12-13cm", 915, "images/OO-q.jpg")
+    pd4 = product("004", "RG-Astray Gold FRAME", "1/144", "RG", "12-13cm", 1098, "images/astray.jpg")
+    pd5 = product("005", "MG-SINANJU", "1/100", "MG", "17-18cm", 2752, 'images/sinanju.jpg')
+    pd6 = product("006", "MG OO XN Raiser", "1/100", "MG", "17-18cm", 2960, 'images/oo-xn.jpg')
+    pd7 = product("007", "MG GUNDAM DEATHSCYTHE HELL", "1/100", "MG", "17-18cm", 1653, 'images/deathscythe.jpg')
+    pd8 = product("008", "MG ZZ Gundam", "1/100", "MG", "17-18cm", 2220, 'images/zz-gundam.jpg')
+    pd9 = product("009", "MG Astray Blue Frame D", "1/100", "MG", "17-18cm", 1772, 'images/blueframe.jpg')
+    pd10 = product("010", "MG STRIKE FREEDOM", "1/100", "MG", "17-18cm", 2564, 'images/strike.jpg')
+    product.append(pd1)
+    product.append(pd2)
+    product.append(pd3)
+    product.append(pd4)
+    product.append(pd5)
+    product.append(pd6)
+    product.append(pd7)
+    product.append(pd8)
+    product.append(pd9)
+    product.append(pd10)
+    return render(request, 'lab11.html', {'product': product,
+                                              'details': details, 'name': name,
+                                              'date': date.strftime("%A %d-%m-%Y %H : %M")})
