@@ -39,7 +39,7 @@ def shop(request):
     listProduct.append(pd8)
     listProduct.append(pd9)
     listProduct.append(pd10)
-    return render(request, 'shop.html', {'product': product,
+    return render(request, 'shop.html', {'product': listProduct,
                                          'details': details, 'name': name,
                                          'date': date.strftime("%A %d-%m-%Y %H : %M")})
 
