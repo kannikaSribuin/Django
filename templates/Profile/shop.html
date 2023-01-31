@@ -1,48 +1,64 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block content %}
-    <br>
-    <div class="text-center">
-    <h2 class="text-center">Show Data</h2>
-    <br>
-        <div class="row">
-        <div class="col-6">
-    <p><strong>ID: </strong> 65342310202-1</p>
-    <p><strong>Name: </strong> kannika </p>
-    <p><strong>gender: </strong>woman</p>
-    <p><strong>Height: </strong>165</p>
-    <p><strong>weight: </strong>50</p>
-        </div>
-            <div class="col-6">
-    <p><strong>Food: </strong>ก๋วยเตี๋ยว</p>
-    <p><strong>Color: </strong>black</p>
-    <p><strong>domicile: </strong>เลย</p>
-    <p><strong>car: </strong>BMW</p>
-    <p><strong>Pet: </strong>แมว</p>
+
+    <head>
+        <style>
+            #pic { width: 200px;}
+            td {text-align: center;
+             vertical-align: middle;
+                font-size: 20px;}
+            p{font-size: 22px}
+            th { vertical-align: middle;
+                font-size: 28px;}
+        </style>
+    </head>
+    {% load static %}
+    <div class="rounded m-3 bg-white" style="height: 100%; font-family: 'Prompt', sans-serif;">
+    <div class="d-flex pt-3 bd-highlight">
+            <div class="p-2 bg-dark flex-fill text-white" style="font-family:'Yellowtail', cursive;">
+             <h2><img src="{% static 'images/1.png' %}" alt="com" width="75px"> Practice 11</h2>
             </div>
         </div>
+        <br>
+    <div class="row">
+        <div class="col-6">
+          <b>
+              <p>ข้อมูลสินค้าประเภท: {{ details }}</p>
+              <p>ทีผู้จัดทำ: {{ name }}</p>
+              <p>วันที่เผยแผร่: {{ date }}</p>
+            </b>
+        </div>
+
     </div>
-
-    <br>
-        <h2 class="text-center">หมวกแฟชั่น</h2>
-
-    <div class="container mt-3 text-center">
-        <table class="table table-bordered">
-            <tr>
-
-                <th>Name</th>
-                <th>Price</th>
-                <th>Images</th>
-            </tr>
-            {% for products in myproduct %}
-                <tr>
-                    <td> {{ products.0 }} </td>
-                    <td> {{ products.1 }} </td>
-                 <td>
-                       <img src="{% static products.2 %}" alt="pic" id="pic" style="width: 200px; height: 200px;">
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
+        <div>
+           <table class="table table-dark table-hover table-striped table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Scale</th>
+            <th>Tier</th>
+            <th>Height</th>
+             <th>Price</th>
+            <th>Discount</th>
+            <th>ค่าขนส่ง(฿)</th>
+            <th>Total</th>
+             <th>IMAGES</th>
+        </tr>
+        {% for listproduct in productlab %}
+        <tr>
+        <td>{{ listproduct.getPid }}</td>
+            <td>{{ listproduct.getName }}</td>
+            <td>{{ listproduct.getScale }}</td>
+            <td>{{ listproduct.getTier }}</td>
+            <td>{{ listproduct.getHeight }}</td>
+            <td>{{ listproduct.getPrice|intcomma }} บาท</td>
+            <td>{{ listproduct.getDiscount|floatformat  }}</td>
+            <td>{{ listproduct.getDelivery }}</td>
+            <td>{{ listproduct.getNet|intcomma }} บาท</td>
+            <td><img src="{% static listproduct.getImage %}" alt="pic" id="pic" ></td>
+        </tr>
+               {% endfor %}
+           </table>
+        </div>
     </div>
 {% endblock %}
