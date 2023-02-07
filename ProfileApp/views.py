@@ -1,6 +1,7 @@
 from ProfileApp.models import *
 import datetime
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from ProfileApp.Form import *
 
 # Create your views here.
 def home(request):
@@ -13,35 +14,61 @@ def interest(request):
     return render(request, 'Profile/interest.html')
 def career(request):
     return render(request, 'Profile/career.html')
+
+listProduct = []
 def shop(request):
     details = "fashion hat"
     name = "น.ส. กรรณิกา ศรีบุรินทร์"
     date = datetime.datetime.now()
+    return render(request, 'Profile/shop.html', {'lstProduct': listProduct,
+                                                'details': details, 'name': name,
+                                                'date': date.strftime("%A %d-%m-%Y %H : %M")})
+def inputPoduct(request):
+    if request.method == "POST":
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form = form.cleaned_data
+            id = form.get('id')
+            name = form.get('name')
+            color = form.get('color')
+            price = form.get('price')
+            am = form.get('amount')
+            size = form.get('size')
+            pd = product(id, name, am, color, size, price)
+            listProduct.append(pd)
+            return redirect('shop')
+        else:
+            return redirect('pro_retrive_all')
+    else:
+        form = ProductForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'Profile/inputProduct.html', context)
 
-    listProduct = []
-    pd1 = product("001", "JACQUEMUS Le bob Gadjo", "1/144", "RG", "12-13cm", 100, 'images/s1.jpg')
-    pd2 = product("002", "RG-Unicorn Gundam", "1/144", "RG", "12-13cm", 150, "images/.jpg")
-    pd3 = product("003", "RG-OO Qan-T", "1/144", "RG", "12-13cm", 89, "images/OO-q.jpg")
-    pd4 = product("004", "RG-Astray Gold FRAME", "1/144", "RG", "12-13cm", 30, "images/astray.jpg")
-    pd5 = product("005", "MG-SINANJU", "1/100", "MG", "17-18cm", 49, 'images/sinanju.jpg')
-    pd6 = product("006", "MG OO XN Raiser", "1/100", "MG", "17-18cm", 99, 'images/oo-xn.jpg')
-    pd7 = product("007", "MG GUNDAM DEATHSCYTHE HELL", "1/100", "MG", "17-18cm", 49, 'images/deathscythe.jpg')
-    pd8 = product("008", "MG ZZ Gundam", "1/100", "MG", "17-18cm", 200, 'images/zz-gundam.jpg')
-    pd9 = product("009", "MG Astray Blue Frame D", "1/100", "MG", "17-18cm", 69, 'images/blueframe.jpg')
-    pd10 = product("010", "MG STRIKE FREEDOM", "1/100", "MG", "17-18cm", 69, 'images/strike.jpg')
-    listProduct.append(pd1)
-    listProduct.append(pd2)
-    listProduct.append(pd3)
-    listProduct.append(pd4)
-    listProduct.append(pd5)
-    listProduct.append(pd6)
-    listProduct.append(pd7)
-    listProduct.append(pd8)
-    listProduct.append(pd9)
-    listProduct.append(pd10)
-    return render(request, 'Profile/shop.html', {'product': listProduct,
-                                         'details': details, 'name': name,
-                                         'date': date.strftime("%A %d-%m-%Y %H : %M")})
+    # pd1 = product("001", "JACQUEMUS Le bob Gadjo", "5", "-", "M", 100, 'images/s1.jpg')
+    # pd2 = product("002", "PRADA Re-Nylon Bucket Hat", "10", "-", "M", 150, "images/s2.jpg")
+    # pd3 = product("003", "RG-OO Qan-T", "6", "-", "L", 89, "images/pd3.jpg")
+    # pd4 = product("004", "RG-Astray Gold FRAME", "8", "-", "L", 30, "images/s4.jpg")
+    # pd5 = product("005", "MG-SINANJU", "5", "-", "M", 49, 'images/s5.jpg')
+    # pd6 = product("006", "MG OO XN Raiser", "5", "-", "XL", 99, 'images/s6.jpg')
+    # pd7 = product("007", "MG GUNDAM DEATHSCYTHE HELL", "10", "-", "S", 49, 'images/s7.jpg')
+    # pd8 = product("008", "MG ZZ Gundam", "10", "-", "S", 200, 'images/s8.jpg')
+    # pd9 = product("009", "MG Astray Blue Frame D", "10", "-", "M", 69, 'images/s9.jpg')
+    # pd10 = product("010", "MG STRIKE FREEDOM", "10", "-", "M", 69, 'images/s10.jpg')
+    # listProduct.append(pd1)
+    # listProduct.append(pd2)
+    # listProduct.append(pd3)
+    # listProduct.append(pd4)
+    # listProduct.append(pd5)
+    # listProduct.append(pd6)
+    # listProduct.append(pd7)
+    # listProduct.append(pd8)
+    # listProduct.append(pd9)
+    # listProduct.append(pd10)
+    # # return render(request, 'Profile/shop.html', {'product': listProduct,
+    #                                      'details': details, 'name': name,
+    #                                      'date': date.strftime("%A %d-%m-%Y %H : %M")})
 
 
 

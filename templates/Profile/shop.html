@@ -3,13 +3,13 @@
  {% load humanize %}
     <head>
         <style>
-            #pic { width: 200px;}
+            #pic { width: 150px;}
             td {text-align: center;
              vertical-align: middle;
-                font-size: 20px;}
-            p{font-size: 22px}
+                font-size: 15px;}
+            p{font-size: 20px}
             th { vertical-align: middle;
-                font-size: 28px;}
+                font-size: 20px;}
         </style>
     </head>
     {% load static %}
@@ -27,6 +27,7 @@
               <p>ทีผู้จัดทำ: {{ name }}</p>
               <p>วันที่เผยแผร่: {{ date }}</p>
             </b>
+            <a href="{% url 'input' %}" class="btn btn-success">Input</a>
         </div>
 
     </div>
@@ -34,28 +35,26 @@
            <table class="table table-dark table-hover table-striped table-bordered">
         <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Scale</th>
-            <th>Tier</th>
-            <th>Height</th>
-             <th>Price</th>
-            <th>Discount</th>
-            <th>ค่าขนส่ง(฿)</th>
+            <th>ชื่อ</th>
+            <th>สี</th>
+            <th>ขนาด</th>
+             <th>ราคา</th>
+            <th>จำนวน</th>
+            <th>ค่าขนส่ง</th>
             <th>Total</th>
-             <th>IMAGES</th>
+
         </tr>
-        {% for listproduct in product %}
+        {% for listproduct in lstProduct %}
         <tr>
         <td>{{ listproduct.getPid }}</td>
             <td>{{ listproduct.getName }}</td>
-            <td>{{ listproduct.getScale }}</td>
-            <td>{{ listproduct.getTier }}</td>
-            <td>{{ listproduct.getHeight }}</td>
+            <td>{{ listproduct.getColor }}</td>
+            <td>{{ listproduct.getSize }}</td>
             <td>{{ listproduct.getPrice|iriencode }} บาท</td>
-            <td>{{ listproduct.getDiscount|floatformat  }}</td>
+            <td>{{ listproduct.getAmount }}</td>
             <td>{{ listproduct.getDelivery }}</td>
             <td>{{ listproduct.getNet|iriencode }} บาท</td>
-            <td><img src="{% static listproduct.getImage %}" alt="pic" id="pic" ></td>
+
         </tr>
                {% endfor %}
            </table>

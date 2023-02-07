@@ -1,0 +1,24 @@
+{%  extends 'base.html' %}
+{% block content %}
+    {% load static %}
+     <div class="rounded m-3 bg-white" style="height: 100%; font-family: 'Prompt', sans-serif;">
+    <div class="d-flex pt-3 bd-highlight">
+            <div class="p-2 bg-dark flex-fill text-white" style="font-family:'Yellowtail', cursive;">
+             <h2><img src="{% static 'images/py.png' %}" alt="com" width="75px"> Input Product</h2>
+            </div>
+        </div>
+         <div class="rounded m-3 bg-white" style="font-weight: bold;">
+    <form class ="" method = "post" style="font-size: 22px">
+        {% csrf_token %}
+        <div class ="form-group">
+            {{ form.as_p}}
+        </div>
+        <br>
+    <p class="text-center">
+        <input type ="submit" value="Save" class="btn btn-success">
+        <input type ="button" value="Cancel" class="btn btn-danger" onclick="location.href={% url 'shop' %}">
+    </p>
+    </form>
+     </div>
+     </div>
+{% endblock %}
